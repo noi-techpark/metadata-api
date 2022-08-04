@@ -7,6 +7,8 @@ on:
 env:
   PROJECT_NAME: metadata-api
   GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
+  DOCKER_IMAGE: ghcr.io/${{ github.repository }}/${{ github.event.repository.name }}
+  DOCKER_TAG: ${{ github.sha }}
 
 
 jobs:
@@ -20,9 +22,6 @@ jobs:
     runs-on: ubuntu-20.04
     if: github.ref == 'refs/heads/main'
     # needs: test
-    env:
-      DOCKER_IMAGE: ghcr.io/${{ github.repository }}/${{ github.event.repository.name }}
-      DOCKER_TAG: ${{ github.sha }}
     steps:
       - name: Checkout source code
         uses: actions/checkout@v2
@@ -61,9 +60,6 @@ jobs:
   #   runs-on: ubuntu-20.04
   #   if: github.ref == 'refs/heads/prod'
   #   # needs: test
-  #   env:
-  #     DOCKER_IMAGE: ghcr.io/${{ github.repository }}/${{ github.event.repository.name }}
-  #     DOCKER_TAG: ${{ github.sha }}
   #   steps:
   #     - name: Checkout source code
   #       uses: actions/checkout@v2
