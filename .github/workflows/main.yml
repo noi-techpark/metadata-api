@@ -36,7 +36,7 @@ jobs:
           X_SPREADSHEET_RANGE: A4:H1000
           X_SPREADSHEET_ID: 1ES48HODXtPH6sdWV2EinI-n1IEY2hHOD7arRQ10Mb7E
           X_SCHEDULER_TIMEOUT: 300
-          X_API_SERVER_PORT: 1000
+          X_API_SERVER_PORT: 1001
 
       - name: create service-account.json
         run: echo $GOOGLE_SERVICE_ACCOUNT_JSON > service-account.json
@@ -74,7 +74,7 @@ jobs:
   #         X_SPREADSHEET_RANGE: A4:H1000
   #         X_SPREADSHEET_ID: 1ES48HODXtPH6sdWV2EinI-n1IEY2hHOD7arRQ10Mb7E
   #         X_SCHEDULER_TIMEOUT: 300
-  #         X_API_SERVER_PORT: 1000
+  #         X_API_SERVER_PORT: 1001
 
   #     - name: create service-account.json
   #       run: echo $GOOGLE_SERVICE_ACCOUNT_JSON > service-account.json
