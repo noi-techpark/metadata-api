@@ -1,12 +1,14 @@
 import gspread
 import threading
 from flask import Flask
+from flask_cors import CORS
 from waitress import serve
 import os
 import logging
 
 logging.basicConfig(format='%(asctime)s - %(message)s', level=logging.INFO)
 app = Flask(__name__)
+CORS(app)
 
 availability = {}
 
