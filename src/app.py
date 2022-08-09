@@ -38,28 +38,28 @@ def generate_sheet(mapping):
     worksheet.update('B2:D255', array)
 
 
-def get(url):
+def api_get(url):
     headers = {}
     response = requests.get(url, headers=headers)
     logging.debug("get: " + url)
     # sleep 1s because of quota
-    # time.sleep(1)
+    time.sleep(1)
     return response.json()
 
 
 def get_mapping():
     global API_URL
     mapping = {}
-    station_types = get(url=API_URL)
+    station_types = api_get(API_URL)
 
     for station_type in station_types:
-        origins = get(station_type["self.stations"] +
+        origins = api_get(station_type["self.stations"] +
                       "?select=sorigin&where=sactive.eq.true")["data"]
 
         if len(origins) > 0:
             mapping[station_type["id"]] = {}
             for origin in origins:
-                data = get(station_type["self.stations+datatypes+measurements"] +
+                data = api_get(station_type["self.stations+datatypes+measurements"] +
                            "?where=sorigin.eq." + str(origin["sorigin"]))["data"]
 
                 mapping[station_type["id"]][origin["sorigin"]] = "closed"
