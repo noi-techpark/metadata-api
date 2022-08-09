@@ -22,6 +22,8 @@ PORT = os.getenv("PORT", 8080)
 SPREADSHEET_ID = os.getenv(
     "SPREADSHEET_ID", "1ES48HODXtPH6sdWV2EinI-n1IEY2hHOD7arRQ10Mb7E")
 SPREADSHEET_RANGE = os.getenv("SPREADSHEET_RANGE", "A1:K500")
+SPREADSHEET_MOBILITY = os.getenv("SPREADSHEET_MOBILITY", "GeneratedMobility")
+
 
 
 def generate_sheet(mapping):
@@ -32,7 +34,7 @@ def generate_sheet(mapping):
         for value in mapping[key].keys():
             array.append([key,value,mapping[key][value]])
 
-    worksheet = gc.open_by_key(SPREADSHEET_ID).worksheet("Generated")
+    worksheet = gc.open_by_key(SPREADSHEET_ID).worksheet(SPREADSHEET_MOBILITY)
     worksheet.update('B2:D255', array)
 
 
