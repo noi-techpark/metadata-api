@@ -9,7 +9,7 @@ import requests
 import time
 
 
-logging.basicConfig(format='%(asctime)s - %(message)s', level=logging.DEBUG)
+logging.basicConfig(format='%(asctime)s - %(message)s', level=logging.INFO)
 app = Flask(__name__)
 CORS(app)
 
@@ -48,8 +48,9 @@ def get(url):
 
 
 def get_mapping():
+    global API_URL
     mapping = {}
-    station_types = get(API_URL)
+    station_types = get(url=API_URL)
 
     for station_type in station_types:
         origins = get(station_type["self.stations"] +
