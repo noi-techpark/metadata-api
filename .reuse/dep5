@@ -1,0 +1,8 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: metadata-api
+Upstream-Contact: NOI Techpark <digital@noi.bz.it>
+Source: https://github.com/noi-techpark/metadata-api
+
+Files: .github/* infrastructure/* .gitignore .env.example LICENSE requirements.txt
+Copyright: (c) NOI Techpark <digital@noi.bz.it>
+License: CC0-1.0
