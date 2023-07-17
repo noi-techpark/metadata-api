@@ -6,7 +6,7 @@ SPDX-License-Identifier: CC0-1.0
 
 # metadata-api
 
-![REUSE Compliance](https://github.com/noi-techpark/metadata-api/actions/workflows/reuse.yml/badge.svg)
+[![REUSE Compliance](https://github.com/noi-techpark/metadata-api/actions/workflows/reuse.yml/badge.svg)](https://github.com/noi-techpark/odh-docs/wiki/REUSE#badges)
 
 Proof of concept of a metadata API for the Open Data Hub
 
